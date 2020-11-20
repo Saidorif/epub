@@ -9,7 +9,7 @@ Add `justinrainbow/epub` to your `composer.json` file.
 ```javascript
 {
     "require": {
-        "sayyid2112/epub": "master-dev"
+        "sayyid2112/epub": "master-dev" 
     }
 }
 ```
