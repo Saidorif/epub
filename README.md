@@ -9,7 +9,7 @@ Add `justinrainbow/epub` to your `composer.json` file.
 ```javascript
 {
     "require": {
-        "justinrainbow/epub": "master-dev"
+        "sayyid2112/epub": "master-dev"
     }
 }
 ```
@@ -28,7 +28,7 @@ Add the following to your `deps` file
 
 ```ini
 [epub]
-    git=http://github.com/justinrainbow/epub.git
+    git=http://github.com/sayyid2112/epub.git
 ```
 
 After you have run the `bin/vendors install` script, add the following
