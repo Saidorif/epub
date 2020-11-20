@@ -48,12 +48,24 @@ class ZipFileResource
     public function all()
     {
         $result = array();
+        $cover_image = '';
+
 
         for ($i = 0; $i < $this->zipFile->numFiles; $i++){
             $item = $this->zipFile->statIndex($i);
-
+            $test_item = $item;
+            $extension = substr($test_item['name'], -4);
+            
+            if($extension == '.jpg' || $extension == '.png' || $extension == '.gif' || $extension == '.svg'){
+                $this->zipFile->extractTo(public_path().'/covers/', array($this->zipFile->getNameIndex($i)));
+                $cover_image = 'covers/'.$test_item['name'];
+            }
+            if($extension == 'html'){
+                $this->zipFile->deleteIndex($i);
+            }
             $result[] = $item['name'];
         }
+        $result['cover'] = $cover_image;
 
         return $result;
     }
